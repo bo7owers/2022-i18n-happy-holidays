@@ -2,5 +2,6 @@
   "language": "日本語",
   "happyHolidays": "ハッピーホリデー！",
   "christmasIsComing": "{date}はあと{time}",
-  "day": "{count}日"
+  "day": "{count}日",
+  "changeLang": "言語の変更"
 }

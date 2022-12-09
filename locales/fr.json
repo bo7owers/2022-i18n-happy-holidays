@@ -1,7 +1,7 @@
 {
-    "language": "Français",
-    "happyHolidays": "Joyeuses fêtes",
-    "christmasIsComing": "{ date } est en{ time }",
-    "day": "un jour | {count} jours"
-  }
-  
+  "language": "Français",
+  "happyHolidays": "Joyeuses fêtes",
+  "christmasIsComing": "{ date } est en{ time }",
+  "day": "un jour | {count} jours",
+  "changeLang": "Changement de langue"
+}

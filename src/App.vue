@@ -31,7 +31,11 @@ const daysTillChristmas = computed(() => {
       <!-- Dates - Check out locales/en.json for the key -->
       <p class="date">{{ t('christmasIsComing') }}</p>
       <!-- Controls - I give you an .icon-button class if you want to use it -->
-      <button class="icon-button" @click="locales.next()">
+      <button
+        class="icon-button"
+        @click="locales.next()"
+        :title="t('changeLang')"
+      >
         <span class="i-carbon-language"></span>
       </button>
       <!-- Flags - the current locale -->
