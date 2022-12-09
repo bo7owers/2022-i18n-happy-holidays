@@ -19,6 +19,16 @@ const daysTillChristmas = computed(() => {
   let daysTo = christmasDate.getTime() - new Date()
   return Math.floor(daysTo / (1000 * 60 * 60 * 24))
 })
+
+// flags obj
+
+const flagsObj = {
+  en: 'i-twemoji-flag-canada',
+  de: 'i-twemoji-flag-germany',
+  es: 'i-twemoji-flag-mexico',
+  fr: 'i-twemoji-flag-france',
+  'ja-JP': 'i-twemoji-flag-japan',
+}
 </script>
 <template>
   <main class="flex flex-col justify-center h-full mx-auto max-w-600px">
@@ -30,7 +40,11 @@ const daysTillChristmas = computed(() => {
       </div>
       <!-- Dates - Check out locales/en.json for the key -->
       <!-- Had to see how to make this work from the solution. It wasn't intuitive until I tried it! -->
-      <i18n-t keypath="christmasIsComing" tag="p" class="date">
+      <i18n-t
+        keypath="christmasIsComing"
+        tag="p"
+        class="date text-red-700 text-lg"
+      >
         <template #date>
           {{ d(christmasDate, 'short') }}
         </template>
@@ -39,14 +53,19 @@ const daysTillChristmas = computed(() => {
         </template>
       </i18n-t>
       <!-- Controls - I give you an .icon-button class if you want to use it -->
-      <button
-        class="icon-button"
-        @click="locales.next()"
-        :title="t('changeLang')"
-      >
-        <span class="i-carbon-language"></span>
-      </button>
-      <!-- Flags - the current locale -->
+      <div class="flex flex-row justify-around items-center w-10em text-2xl">
+        <button
+          class="icon-button"
+          @click="locales.next()"
+          :title="t('changeLang')"
+        >
+          <span class="i-carbon-language"></span>
+        </button>
+        <!-- Flags - the current locale -->
+        <p class="flex flex-row items-center justify-center gap-2">
+          <span :class="flagsObj[locale]"></span>{{ t('language') }}
+        </p>
+      </div>
     </section>
   </main>
 </template>
