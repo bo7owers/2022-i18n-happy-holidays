@@ -31,6 +31,17 @@ const flagsObj = {
 }
 </script>
 <template>
+  <p lang="en">
+    made by
+    <a
+      href="http://github.com/bo7owers"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="underline rounded mx-auto text-lime-700 hover:text-cyan-800 .focus:text-cyan-800 transition-colors"
+      title="opens in a new tab"
+      >bo7owers</a
+    >
+  </p>
   <main class="flex flex-col justify-center h-full mx-auto max-w-600px">
     <section class="flex flex-col items-center leading-loose text-center">
       <div class="text-3xl">
@@ -77,7 +88,8 @@ const flagsObj = {
     h-32px
     rounded-full
     border-1
-    border-transparent
+    /* border-transparent */
+    border-dark-50
     bg-transparent
     cursor-pointer
     duration-300
