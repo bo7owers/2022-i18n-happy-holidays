@@ -14,7 +14,7 @@ watch(locales.state, state => {
 })
 
 // make sure the timezones were right :-)
-const christmasDate = new Date('2022/12/25')
+const christmasDate = new Date('2022-12-25')
 const daysTillChristmas = computed(() => {
   let daysTo = christmasDate.getTime() - new Date()
   return Math.floor(daysTo / (1000 * 60 * 60 * 24))
@@ -29,7 +29,16 @@ const daysTillChristmas = computed(() => {
         <span class="i-twemoji-world-map"></span>
       </div>
       <!-- Dates - Check out locales/en.json for the key -->
-      <p class="date">{{ t('christmasIsComing') }}</p>
+      <p class="date">
+        {{
+          t(
+            'christmasIsComing',
+            { time: daysTillChristmas },
+            { date: d(christmasDate, 'long') }
+          )
+        }}
+        days
+      </p>
       <!-- Controls - I give you an .icon-button class if you want to use it -->
       <button
         class="icon-button"
